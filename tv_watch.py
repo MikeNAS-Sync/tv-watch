@@ -16,7 +16,9 @@ BASE = "https://tv.fi/ohjelma/"
 UA = "tv-watch/0.1 (personal home use)"
 TZ = ZoneInfo("Europe/Helsinki")
 DAYS = ["Ma", "Ti", "Ke", "To", "Pe", "La", "Su"]
+WEEKDAYS = {"mon": 0, "tue": 1, "wed": 2, "thu": 3, "fri": 4, "sat": 5, "sun": 6}
 LD_RE = re.compile(r"<script[^>]*application/ld\+json[^>]*>(.*?)</script>", re.S)
+EP_RE = re.compile(r"Kausi \d+, jakso \d+")
 
 
 def fetch(slug):
@@ -65,29 +67,57 @@ def parse(html):
     return found
 
 
-def fmt(a):
+def match_slot(a, slots, tolerance):
+    """Return the new-episode slot this airing falls in, or None (a repeat)."""
     s = a["start"]
-    return f"{DAYS[s.weekday()]} {s.day}.{s.month}. {s.hour:02d}.{s.minute:02d} {a['channel']}: {a['title']}"
+    for slot in slots:
+        if slot["slug"] != a["slug"] or WEEKDAYS[slot["weekday"]] != s.weekday():
+            continue
+        hour, minute = map(int, str(slot["time"]).split(":"))
+        if abs(s.hour * 60 + s.minute - (hour * 60 + minute)) <= tolerance:
+            return slot
+    return None
 
 
-def build(airings, now):
+def fmt(n):
+    s = n["start"]
+    return f"{DAYS[s.weekday()]} {s.day}.{s.month}. {s.hour:02d}.{s.minute:02d} {n['label']}: {n['episode']}"
+
+
+def build(airings, cfg, now):
+    slots = cfg.get("new_episodes", [])
+    tolerance = cfg.get("slot_tolerance_minutes", 10)
     today = now.date()
-    next_monday = today + timedelta(days=7 - today.weekday())
-    next_sunday = next_monday + timedelta(days=6)
-    items = sorted((a for a in airings.values() if a["start"].date() >= today),
-                   key=lambda a: a["start"])
-    todays = [a for a in items if a["start"].date() == today]
-    week = [a for a in items if next_monday <= a["start"].date() <= next_sunday]
+    tomorrow = today + timedelta(days=1)
+    week_start = today - timedelta(days=today.weekday())  # this week's Monday
+    week_end = week_start + timedelta(days=6)  # this week's Sunday
+    news = []
+    for a in sorted(airings.values(), key=lambda x: x["start"]):
+        if a["start"].date() < today:
+            continue
+        slot = match_slot(a, slots, tolerance)
+        if slot:
+            ep = EP_RE.search(a["title"])
+            news.append({"start": a["start"], "label": slot["label"],
+                         "episode": ep.group(0) if ep else a["title"],
+                         "channel": a["channel"]})
+    week = [n for n in news if week_start <= n["start"].date() <= week_end]
+    tomorrows = [n for n in news if n["start"].date() == tomorrow]
+    upcoming = next((n for n in news if n["start"] >= now), None)
     return {
         "generated_at": now.isoformat(timespec="seconds"),
-        "today_count": len(todays),
-        "today_summary": "\n".join(fmt(a) for a in todays),
-        "week_start": next_monday.isoformat(),
-        "week_end": next_sunday.isoformat(),
+        "week_start": week_start.isoformat(),
+        "week_end": week_end.isoformat(),
         "week_count": len(week),
-        "week_summary": "\n".join(fmt(a) for a in week),
-        "airings": [{"start": a["start"].isoformat(timespec="minutes"),
-                     "channel": a["channel"], "title": a["title"]} for a in items],
+        "week_summary": "\n".join(fmt(n) for n in week),
+        "tomorrow_count": len(tomorrows),
+        "tomorrow_summary": "\n".join(fmt(n) for n in tomorrows),
+        "next_new_start": upcoming["start"].isoformat(timespec="seconds") if upcoming else None,
+        "next_new_label": upcoming["label"] if upcoming else None,
+        "next_new_episode": upcoming["episode"] if upcoming else None,
+        "new_episodes": [{"start": n["start"].isoformat(timespec="minutes"),
+                          "label": n["label"], "episode": n["episode"],
+                          "channel": n["channel"]} for n in news],
     }
 
 
@@ -104,7 +134,8 @@ def main():
                 found = parse(html)
                 status[slug] = f"{len(found)} airings"
                 for a in found:
-                    airings[(a["channel"], a["start"])] = a
+                    a["slug"] = slug
+                    airings[(slug, a["channel"], a["start"])] = a
         except Exception as exc:  # network error, timeout, 5xx
             status[slug] = f"error: {exc}"
         time.sleep(1)
@@ -113,12 +144,12 @@ def main():
     if all(text.startswith("error") for text in status.values()):
         print("All fetches failed, keeping the previous data.", file=sys.stderr)
         sys.exit(1)
-    result = build(airings, datetime.now(TZ))
+    result = build(airings, cfg, datetime.now(TZ))
     result["sources"] = status
     out = root / "data" / "matches.json"
     out.parent.mkdir(exist_ok=True)
     out.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"Wrote {out}: today {result['today_count']}, next week {result['week_count']}")
+    print(f"Wrote {out}: new episodes this week {result['week_count']}, next {result['next_new_start']}")
 
 
 if __name__ == "__main__":
