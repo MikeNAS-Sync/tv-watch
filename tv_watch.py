@@ -67,7 +67,7 @@ def parse(html):
 
 def fmt(a):
     s = a["start"]
-    return f"{DAYS[s.weekday()]} {s.day}.{s.month}. {s.hour}.{s.minute:02d} {a['channel']}: {a['title']}"
+    return f"{DAYS[s.weekday()]} {s.day}.{s.month}. {s.hour:02d}.{s.minute:02d} {a['channel']}: {a['title']}"
 
 
 def build(airings, now):
