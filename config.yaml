@@ -5,3 +5,18 @@ shows:
   - 90-paivaa-morsiamena-pariterapiaa-jalkipyykki
   - 90-paivaa-morsiamena-rakkautta-etsimassa
   - 90-paivaa-morsiamena-rakkautta-etsimassa-jalkipyykki
+
+slot_tolerance_minutes: 10
+new_episodes:
+  - label: "Maailmalla"
+    slug: 90-paivaa-morsiamena-maailmalla
+    weekday: tue
+    time: "20:00"
+  - label: "Pariterapiaa: Jälkipyykki"
+    slug: 90-paivaa-morsiamena-pariterapiaa-jalkipyykki
+    weekday: sun
+    time: "21:00"
+  - label: "Rakkautta etsimässä"
+    slug: 90-paivaa-morsiamena-rakkautta-etsimassa
+    weekday: fri
+    time: "20:00"
