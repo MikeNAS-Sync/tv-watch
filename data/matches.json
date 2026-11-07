@@ -1,27 +1,15 @@
 {
-  "generated_at": "2026-11-06T09:30:02+02:00",
+  "generated_at": "2026-11-07T08:42:23+02:00",
   "week_start": "2026-11-02",
   "week_end": "2026-11-08",
-  "week_count": 2,
-  "week_summary": "Pe 6.11. 20.00 Rakkautta etsimässä: Kausi 2, jakso 3\nSu 8.11. 21.00 Pariterapiaa: Jälkipyykki: Kausi 3, jakso 7",
+  "week_count": 0,
+  "week_summary": "",
   "tomorrow_count": 0,
   "tomorrow_summary": "",
-  "next_new_start": "2026-11-06T20:00:00+02:00",
-  "next_new_label": "Rakkautta etsimässä",
-  "next_new_episode": "Kausi 2, jakso 3",
+  "next_new_start": "2026-11-10T20:00:00+02:00",
+  "next_new_label": "Maailmalla",
+  "next_new_episode": "Kausi 8, jakso 2",
   "new_episodes": [
-    {
-      "start": "2026-11-06T20:00+02:00",
-      "label": "Rakkautta etsimässä",
-      "episode": "Kausi 2, jakso 3",
-      "channel": "TLC"
-    },
-    {
-      "start": "2026-11-08T21:00+02:00",
-      "label": "Pariterapiaa: Jälkipyykki",
-      "episode": "Kausi 3, jakso 7",
-      "channel": "TLC"
-    },
     {
       "start": "2026-11-10T20:00+02:00",
       "label": "Maailmalla",
@@ -32,12 +20,6 @@
       "start": "2026-11-13T20:00+02:00",
       "label": "Rakkautta etsimässä",
       "episode": "Kausi 2, jakso 4",
-      "channel": "TLC"
-    },
-    {
-      "start": "2026-11-15T21:00+02:00",
-      "label": "Pariterapiaa: Jälkipyykki",
-      "episode": "Kausi 3, jakso 8",
       "channel": "TLC"
     },
     {
@@ -54,11 +36,11 @@
     }
   ],
   "sources": {
-    "90-paivaa-morsiamena-maailmalla": "8 airings",
+    "90-paivaa-morsiamena-maailmalla": "9 airings",
     "90-paivaa-morsiamena-maailmalla-jalkipyykki": "not listed",
-    "90-paivaa-morsiamena-pariterapiaa": "0 airings",
-    "90-paivaa-morsiamena-pariterapiaa-jalkipyykki": "14 airings",
-    "90-paivaa-morsiamena-rakkautta-etsimassa": "14 airings",
+    "90-paivaa-morsiamena-pariterapiaa": "17 airings",
+    "90-paivaa-morsiamena-pariterapiaa-jalkipyykki": "0 airings",
+    "90-paivaa-morsiamena-rakkautta-etsimassa": "12 airings",
     "90-paivaa-morsiamena-rakkautta-etsimassa-jalkipyykki": "not listed"
   }
 }
