@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-11-19T10:09:42+02:00",
+  "generated_at": "2026-11-20T09:53:57+02:00",
   "week_start": "2026-11-16",
   "week_end": "2026-11-22",
-  "week_count": 2,
-  "week_summary": "Pe 20.11. 20.00 Rakkautta etsimässä: Kausi 2, jakso 5\nSu 22.11. 21.00 Pariterapiaa: Jälkipyykki: Kausi 3, jakso 9",
-  "tomorrow_count": 1,
-  "tomorrow_summary": "Pe 20.11. 20.00 Rakkautta etsimässä: Kausi 2, jakso 5",
+  "week_count": 1,
+  "week_summary": "Pe 20.11. 20.00 Rakkautta etsimässä: Kausi 2, jakso 5",
+  "tomorrow_count": 0,
+  "tomorrow_summary": "",
   "next_new_start": "2026-11-20T20:00:00+02:00",
   "next_new_label": "Rakkautta etsimässä",
   "next_new_episode": "Kausi 2, jakso 5",
@@ -14,12 +14,6 @@
       "start": "2026-11-20T20:00+02:00",
       "label": "Rakkautta etsimässä",
       "episode": "Kausi 2, jakso 5",
-      "channel": "TLC"
-    },
-    {
-      "start": "2026-11-22T21:00+02:00",
-      "label": "Pariterapiaa: Jälkipyykki",
-      "episode": "Kausi 3, jakso 9",
       "channel": "TLC"
     },
     {
@@ -35,24 +29,24 @@
       "channel": "TLC"
     },
     {
-      "start": "2026-11-29T21:00+02:00",
-      "label": "Pariterapiaa: Jälkipyykki",
-      "episode": "Kausi 3, jakso 10",
-      "channel": "TLC"
-    },
-    {
       "start": "2026-12-01T20:00+02:00",
       "label": "Maailmalla",
       "episode": "Kausi 8, jakso 5",
       "channel": "TLC"
+    },
+    {
+      "start": "2026-12-04T20:00+02:00",
+      "label": "Rakkautta etsimässä",
+      "episode": "Kausi 2, jakso 7",
+      "channel": "TLC"
     }
   ],
   "sources": {
-    "90-paivaa-morsiamena-maailmalla": "9 airings",
+    "90-paivaa-morsiamena-maailmalla": "8 airings",
     "90-paivaa-morsiamena-maailmalla-jalkipyykki": "not listed",
     "90-paivaa-morsiamena-pariterapiaa": "0 airings",
-    "90-paivaa-morsiamena-pariterapiaa-jalkipyykki": "12 airings",
-    "90-paivaa-morsiamena-rakkautta-etsimassa": "10 airings",
+    "90-paivaa-morsiamena-pariterapiaa-jalkipyykki": "0 airings",
+    "90-paivaa-morsiamena-rakkautta-etsimassa": "14 airings",
     "90-paivaa-morsiamena-rakkautta-etsimassa-jalkipyykki": "not listed"
   }
 }
