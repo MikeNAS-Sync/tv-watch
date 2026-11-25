@@ -1,21 +1,15 @@
 {
-  "generated_at": "2026-11-24T12:34:01+02:00",
+  "generated_at": "2026-11-25T11:23:14+02:00",
   "week_start": "2026-11-23",
   "week_end": "2026-11-29",
-  "week_count": 3,
-  "week_summary": "Ti 24.11. 20.00 Maailmalla: Kausi 8, jakso 4\nPe 27.11. 20.00 Rakkautta etsimässä: Kausi 2, jakso 6\nSu 29.11. 21.00 Pariterapiaa: Jälkipyykki: Kausi 3, jakso 10",
+  "week_count": 2,
+  "week_summary": "Pe 27.11. 20.00 Rakkautta etsimässä: Kausi 2, jakso 6\nSu 29.11. 21.00 Pariterapiaa: Jälkipyykki: Kausi 3, jakso 10",
   "tomorrow_count": 0,
   "tomorrow_summary": "",
-  "next_new_start": "2026-11-24T20:00:00+02:00",
-  "next_new_label": "Maailmalla",
-  "next_new_episode": "Kausi 8, jakso 4",
+  "next_new_start": "2026-11-27T20:00:00+02:00",
+  "next_new_label": "Rakkautta etsimässä",
+  "next_new_episode": "Kausi 2, jakso 6",
   "new_episodes": [
-    {
-      "start": "2026-11-24T20:00+02:00",
-      "label": "Maailmalla",
-      "episode": "Kausi 8, jakso 4",
-      "channel": "TLC"
-    },
     {
       "start": "2026-11-27T20:00+02:00",
       "label": "Rakkautta etsimässä",
@@ -54,7 +48,7 @@
     }
   ],
   "sources": {
-    "90-paivaa-morsiamena-maailmalla": "10 airings",
+    "90-paivaa-morsiamena-maailmalla": "9 airings",
     "90-paivaa-morsiamena-maailmalla-jalkipyykki": "not listed",
     "90-paivaa-morsiamena-pariterapiaa": "0 airings",
     "90-paivaa-morsiamena-pariterapiaa-jalkipyykki": "12 airings",
