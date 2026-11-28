@@ -1,21 +1,15 @@
 {
-  "generated_at": "2026-11-27T11:16:35+02:00",
+  "generated_at": "2026-11-28T10:34:39+02:00",
   "week_start": "2026-11-23",
   "week_end": "2026-11-29",
-  "week_count": 1,
-  "week_summary": "Pe 27.11. 20.00 Rakkautta etsimässä: Kausi 2, jakso 6",
+  "week_count": 0,
+  "week_summary": "",
   "tomorrow_count": 0,
   "tomorrow_summary": "",
-  "next_new_start": "2026-11-27T20:00:00+02:00",
-  "next_new_label": "Rakkautta etsimässä",
-  "next_new_episode": "Kausi 2, jakso 6",
+  "next_new_start": "2026-12-01T20:00:00+02:00",
+  "next_new_label": "Maailmalla",
+  "next_new_episode": "Kausi 8, jakso 5",
   "new_episodes": [
-    {
-      "start": "2026-11-27T20:00+02:00",
-      "label": "Rakkautta etsimässä",
-      "episode": "Kausi 2, jakso 6",
-      "channel": "TLC"
-    },
     {
       "start": "2026-12-01T20:00+02:00",
       "label": "Maailmalla",
@@ -42,11 +36,11 @@
     }
   ],
   "sources": {
-    "90-paivaa-morsiamena-maailmalla": "8 airings",
+    "90-paivaa-morsiamena-maailmalla": "9 airings",
     "90-paivaa-morsiamena-maailmalla-jalkipyykki": "not listed",
-    "90-paivaa-morsiamena-pariterapiaa": "14 airings",
+    "90-paivaa-morsiamena-pariterapiaa": "15 airings",
     "90-paivaa-morsiamena-pariterapiaa-jalkipyykki": "0 airings",
-    "90-paivaa-morsiamena-rakkautta-etsimassa": "14 airings",
+    "90-paivaa-morsiamena-rakkautta-etsimassa": "12 airings",
     "90-paivaa-morsiamena-rakkautta-etsimassa-jalkipyykki": "not listed"
   }
 }
